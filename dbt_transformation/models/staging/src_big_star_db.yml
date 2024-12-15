@@ -8,8 +8,7 @@ sources:
       warn_after:
         count: 24
         period: hour
-    loaded _at_field: "_airbyte_normalized_at"
-    
+    loaded_at_field: "_airbyte_extracted_at"  
     tables:
       - name: customers
       - name: orders
