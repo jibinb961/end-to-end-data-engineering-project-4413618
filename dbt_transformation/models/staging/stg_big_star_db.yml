@@ -13,3 +13,20 @@ models:
         tests:
           - unique
           - not_null
+      - name: customer_id
+        tests:
+          - relationships:
+              to: ref('stg_customers')  # Correct reference to the customers table
+              field: customer_id
+      - name: order_status
+        tests:
+          - accepted_values:
+              values:
+                - created
+                - shipped
+                - approved
+                - canceled
+                - invoiced
+                - delivered
+                - processing
+                - unavailable
