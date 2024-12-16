@@ -4,10 +4,12 @@ models:
   - name: dim_customers
     columns:
       - name: customer_id
+        description: Unique ID to indetify each customers.
         tests:
           - unique
           - not_null
       - name: email
+        description: Customer email id.
         tests:
           - not_null
       - name: city

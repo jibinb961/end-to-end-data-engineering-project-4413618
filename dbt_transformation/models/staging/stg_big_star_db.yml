@@ -4,6 +4,7 @@ models:
   - name: stg_customers
     columns:
       - name: customer_id
+        description: unique id to indentify customers.
         tests:
           - unique
           - not_null
@@ -11,15 +12,18 @@ models:
   - name: stg_orders
     columns:
       - name: order_id
+        description: unique ID to Identify Orders.
         tests:
           - unique
           - not_null
       - name: customer_id
+        description: Foregin key to the table customers.
         tests:
           - relationships:
               to: ref('stg_customers')  # Correct reference to the customers table
               field: customer_id
       - name: order_status
+        description: Status gets updated when the status of the order changes. 
         tests:
           - accepted_values:
               values:
